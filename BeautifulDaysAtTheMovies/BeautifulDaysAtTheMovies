@@ -1,0 +1,23 @@
+package hackerrank;
+public class BeautifulDaysAtTheMovies {
+    public static void main(String[] args) {
+        int i = 13;
+        int j = 45;
+        int k = 3;
+        System.out.println(beautiful(i, j, k));
+    }
+
+    public static int beautiful(int i, int j, int k) {
+        int count = 0;
+        for (int a = i; a<=j; a++) {
+            StringBuilder sb = new StringBuilder();
+            sb.append(a);
+            sb = sb.reverse();
+            String str = sb.toString();
+            int out = Integer.parseInt(str);
+            if (Math.abs((a - out) % k) == 0)
+                count++;
+        }
+        return count;
+    }
+}
